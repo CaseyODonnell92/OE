@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon">
-        <rdfs:comment xml:lang="en">Pokemon ontology</rdfs:comment>
+        <rdfs:comment xml:lang="en">Pokemon ontology http://pokemon.wikia.com/wiki/Pok%C3%A9mon_(creature).</rdfs:comment>
     </owl:Ontology>
     
 
@@ -27,41 +27,53 @@
 
     <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#evolvesFrom">
         <owl:inverseOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#evolvesInto"/>
+        <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#evolvesInto -->
 
-    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#evolvesInto"/>
-    
-
-
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#hasPrimaryType -->
-
-    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#hasPrimaryType">
+    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#evolvesInto">
         <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
-        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
-        <rdfs:comment>Every Pokemon has two types. This property specifies the first type</rdfs:comment>
+        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#hasSecondaryType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isEffectiveAgainst -->
 
-    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#hasSecondaryType">
-        <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
-        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
-        <rdfs:comment>Every Pokemon has two types. This property specifies the second.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isEffectiveAgainst">
+        <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isWeakAgainst -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst -->
 
-    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isWeakAgainst">
-        <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
-        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst">
+        <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst -->
+
+    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst">
+        <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst -->
+
+    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst">
+        <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+        <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
     
 
@@ -77,162 +89,354 @@
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Move"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#Move -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Move"/>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon">
-        <owl:disjointWith rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockCombatMove">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon"/>
+                                    <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon"/>
+                                    <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon"/>
+                                    <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                                    <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon"/>
+                                    <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceTypePokemon"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#StatusMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type">
-        <rdfs:comment>All Pokemon have two types (http://pokemon.wikia.com/wiki/Type).</rdfs:comment>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#StatusMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Move"/>
     </owl:Class>
     
 
 
-    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterType -->
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelCombatMove -->
 
-    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterType">
-        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Type"/>
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterCombatMove -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterCombatMove">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:Class>
     
 
@@ -248,24 +452,33 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelType"/>
-            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterType"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelCombatMove"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterCombatMove"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isEffectiveAgainst"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
