@@ -241,6 +241,15 @@
     
 
 
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassBugTypePokemon -->
+
+    <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassBugTypePokemon">
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon"/>
+        <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+    </owl:Class>
+    
+
+
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassCombatMove">
