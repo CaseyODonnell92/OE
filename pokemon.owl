@@ -109,6 +109,45 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -133,6 +172,40 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -149,6 +222,24 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -165,6 +256,39 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -181,6 +305,41 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -197,6 +356,44 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -213,6 +410,43 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -229,6 +463,41 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -245,6 +514,31 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -261,6 +555,45 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -277,6 +610,41 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#BugTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -293,6 +661,43 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FlyingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -315,6 +720,32 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#NormalCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -331,6 +762,40 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GhostTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -353,6 +818,38 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:allValuesFrom rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DarkTypePokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PsychicTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FightingTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#PoisonTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -429,6 +926,42 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#ElectricTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#SteelTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FairyTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#IceTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
@@ -445,6 +978,41 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterCombatMove -->
 
     <owl:Class rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterCombatMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#DragonTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GrassTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#WaterTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#FireTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#GroundTypePokemon"/>
+                            <rdf:Description rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#RockTypePokemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
     </owl:Class>
     
