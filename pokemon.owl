@@ -23,6 +23,12 @@
     
 
 
+    <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#doesDamageTo -->
+
+    <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#doesDamageTo"/>
+    
+
+
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#evolvesFrom -->
 
     <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#evolvesFrom">
@@ -45,6 +51,7 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isEffectiveAgainst -->
 
     <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isEffectiveAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#doesDamageTo"/>
         <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
         <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
@@ -54,6 +61,7 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst -->
 
     <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotAtAllEffectiveAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#doesDamageTo"/>
         <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
         <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
@@ -63,6 +71,7 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst -->
 
     <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isNotVeryEffectiveAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#doesDamageTo"/>
         <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
         <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
@@ -80,6 +89,7 @@
     <!-- http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst -->
 
     <owl:ObjectProperty rdf:about="http://semanticweb.org/casey/ontologies/2017/2/pokemon#isSuperEffectiveAgainst">
+        <rdfs:subPropertyOf rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#doesDamageTo"/>
         <rdfs:domain rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#CombatMove"/>
         <rdfs:range rdf:resource="http://semanticweb.org/casey/ontologies/2017/2/pokemon#Pokemon"/>
     </owl:ObjectProperty>
