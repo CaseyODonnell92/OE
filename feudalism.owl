@@ -77,7 +77,8 @@
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Archbishop -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Archbishop">
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Clergy"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isLiegeOf"/>
                 <owl:allValuesFrom>
@@ -89,8 +90,7 @@
                     </owl:Class>
                 </owl:allValuesFrom>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Clergy"/>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -150,27 +150,13 @@
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Monarch -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Monarch">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isLiegeOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Noble"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isSubjectOf"/>
-                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Person"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#rules"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Realm"/>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Person"/>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -178,27 +164,19 @@
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Noble -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Noble">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isLiegeOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Vassal"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isSubjectOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Monarch"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Person"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#rules"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County"/>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Person"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isSubjectOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Monarch"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -206,21 +184,21 @@
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Peasant -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Peasant">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isSubjectOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Vassal"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isLiegeOf"/>
-                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isSubjectOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Monarch"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Noble"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Vassal"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -234,7 +212,8 @@
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Pope -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Pope">
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Clergy"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isLiegeOf"/>
                 <owl:allValuesFrom>
@@ -247,8 +226,7 @@
                     </owl:Class>
                 </owl:allValuesFrom>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Clergy"/>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -272,27 +250,26 @@
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Vassal -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Vassal">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isLiegeOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Peasant"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isSubjectOf"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Noble"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Person"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#rules"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Barony"/>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Person"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#isSubjectOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Monarch"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Noble"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -308,40 +285,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Baron_Gina -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Baron_Gina">
-        <isLiegeOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Shaheel"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Basementia -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Basementia"/>
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Count_Casey -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#KingAdam -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Count_Casey">
-        <isLiegeOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Baron_Gina"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#King_Adam -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#King_Adam">
-        <isLiegeOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Count_Casey"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#KingAdam">
         <rules rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Basementia"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Shaheel -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Shaheel"/>
     
 
 
@@ -356,9 +310,28 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Archbishop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Bishop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Pope"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Priest"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Barony"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Realm"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Clergy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Monarch"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Noble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Peasant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Vassal"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
