@@ -640,15 +640,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Adam -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Adam">
-        <isLiegeOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Casey"/>
-        <rules rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Basementia"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Archbishop -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Archbishop">
@@ -657,51 +648,53 @@
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#BaronyA -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Baron -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#BaronyA">
-        <isPartOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#CountyA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Baron">
+        <rules rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Barony"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Basementia -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Barony -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Basementia">
-        <contains rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#CountyA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Barony">
+        <isPartOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Casey -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Count -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Casey">
-        <rules rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#CountyA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Count">
+        <isLiegeOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Baron"/>
+        <rules rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#CountyA -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#CountyA">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County">
         <rdf:type rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County"/>
-        <contains rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#BaronyA"/>
+        <contains rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Barony"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Gina -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#King -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Gina">
-        <rules rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#BaronyA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#King">
+        <isLiegeOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Count"/>
+        <rules rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Realm"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Parish -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Peasant -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Parish">
-        <isMinisteredBy rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Priest"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Peasant">
+        <isSubjectOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Baron"/>
     </owl:NamedIndividual>
     
 
@@ -721,26 +714,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Shaheel -->
+    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Realm -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Shaheel">
-        <isSubjectOf rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Gina"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#SomeLand -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#SomeLand">
-        <rdf:type rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Barony"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#SomeMonarch -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#SomeMonarch">
-        <rdf:type rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Peasant"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#Realm">
+        <contains rdf:resource="http://www.semanticweb.org/casey/ontologies/2017/2/Feudalism#County"/>
     </owl:NamedIndividual>
     
 
