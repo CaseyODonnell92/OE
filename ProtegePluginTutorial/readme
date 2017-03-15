@@ -1,0 +1,14 @@
+This is a version of the Protege plugin tutorial found at http://protegewiki.stanford.edu/wiki/PluginAnatomy .
+The build file had to be altered so that jar names match the distribution of Protege I was using.
+
+Prerequisites for building:
+    - Ant installed (if on Windows, this includes manually setting the ANT_HOME env variable
+    and appending it to the PATH variable)
+
+Build instructions:
+    - Set an environment variable called PROTEGE_HOME to point at the filepath of your Protege distribution.
+    - To generate a jar to copy to Protege's plugins folder, run 'ant jar'
+    - To install directly to Protege's plugin folder without the need to drop the jar manually,
+    run 'ant install'
+    - The -v option can be very handy.
+    
