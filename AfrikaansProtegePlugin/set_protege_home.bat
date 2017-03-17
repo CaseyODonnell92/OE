@@ -1,0 +1,1 @@
+set PROTEGE_HOME=C:\Program Files (x86)\Protege-5.1.0-win\Protege-5.1.0

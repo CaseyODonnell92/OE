@@ -1,0 +1,6 @@
+org.semanticweb.owlapi.manchestersyntax.renderer.ManchesterOWLSyntaxFrameRenderer
+org.protege.editor.owl.ui.view.cls.OWLClassDescriptionViewComponent
+org.protege.editor.owl.ui.framelist.OWLFrameList
+org.protege.editor.owl.ui.view.AbstractOWLViewComponent
+org.protege.editor.owl.OWLEditorKit
+org.protege.editor.owl.ui.frame.cls.OWLClassDescriptionFrame
