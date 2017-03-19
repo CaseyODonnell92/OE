@@ -3,16 +3,16 @@
 
 <plugin>
    <extension
-         id="Afrikaans View"
+         id="Afrikaanse Klasbeskrywing"
          point="org.protege.editor.core.application.ViewComponent">
       <label
-            value="Afrikaans View">
+            value="Afrikaanse Klasbeskrywing">
       </label>
       <class
-            value="AfrikaansViewComponent">
+            value="OWLAfrikaansClassDescriptionViewComponent">
       </class>
       <category
-            value="@org.protege.ontologycategory">
+            value="@org.protege.classcategory">
       </category>
    </extension>
 </plugin>
