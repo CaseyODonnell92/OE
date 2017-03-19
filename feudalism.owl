@@ -423,7 +423,7 @@
                     </owl:Class>
                 </owl:allValuesFrom>
             </owl:Restriction>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
     </owl:Class>
     
 

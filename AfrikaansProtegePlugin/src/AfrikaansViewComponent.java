@@ -35,7 +35,7 @@ public class AfrikaansViewComponent extends AbstractOWLClassViewComponent{
         textArea = new TextArea();
         //add(sp);
         add(textArea);
-        //textArea.setText("Welkom by die Afrikaanse Protege plugin!");
+        textArea.setText("Welkom by die Afrikaanse Protege plugin!");
 
     }
 
@@ -44,13 +44,13 @@ public class AfrikaansViewComponent extends AbstractOWLClassViewComponent{
         list.setRootObject(selectedClass);
 
 
-        textArea.setText("");
+        textArea.setText(textArea.getText());
 
         OWLFrame frame = list.getFrame();
         //textArea.setText(frame.toString());
         for (OWLFrameSection section: (List<OWLFrameSection>)frame.getFrameSections()) {
             for (OWLFrameSectionRow row: (List<OWLFrameSectionRow>) section.getRows()) {
-                textArea.setText(textArea.getText() + "\n" + ((OWLEquivalentClassesAxiom)row.getAxiom()).getClassExpressionsAsList());
+                textArea.setText(textArea.getText() + "\n" + (row.getAxiom().toString().replace("some", "ten minste").replace("only", "net"))); // + " : " + row.getAxiom().getAxiomWithoutAnnotations()));
             }
         }
         return selectedClass;
