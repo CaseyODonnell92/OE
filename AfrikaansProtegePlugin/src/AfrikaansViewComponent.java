@@ -36,7 +36,6 @@ public class AfrikaansViewComponent extends AbstractOWLClassViewComponent{
     }
 
     @Override
-    public void disposeView() {
-        list.dispose();
+    public void disposeView(){list.dispose();
     }
 }
