@@ -20,9 +20,7 @@ public abstract class AbstractOWLAfrikaansFrameSectionRow<R extends Object, A ex
     }
 
     protected Object getObjectRendering(OWLObject ob) {
-        OWLObjectRendererImpl renderer = new OWLObjectRendererImpl(getOWLModelManager());   //Hey Adam... Psst! I've got this set to manchester syntax cause if Larry
-                                                                                            //and Michael see our progress, I don't know if we should let them know there's
-                                                                                            //already a renderer for their whole project lol
+        AfrikaansOWLObjectRendererImpl renderer = new AfrikaansOWLObjectRendererImpl(getOWLModelManager());
         return renderer.render(ob);
     }
 
