@@ -50,7 +50,9 @@ public class AfrikaansViewComponent extends AbstractOWLClassViewComponent{
         //textArea.setText(frame.toString());
         for (OWLFrameSection section: (List<OWLFrameSection>)frame.getFrameSections()) {
             for (OWLFrameSectionRow row: (List<OWLFrameSectionRow>) section.getRows()) {
-                textArea.setText(textArea.getText() + "\n" + (row.getAxiom().toString().replace("some", "ten minste").replace("only", "net"))); // + " : " + row.getAxiom().getAxiomWithoutAnnotations()));
+                OWLAxiom ax = row.getAxiom();
+                if (ax == null) continue;
+                textArea.setText(textArea.getText() + "\n" + (ax.toString().replace("some", "ten minste").replace("only", "net"))); // + " : " + row.getAxiom().getAxiomWithoutAnnotations()));
             }
         }
         return selectedClass;
