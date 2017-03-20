@@ -10,5 +10,7 @@ public class OWLAfrikaansClassDescriptionFrame extends AbstractOWLFrame<OWLClass
     public OWLAfrikaansClassDescriptionFrame(OWLEditorKit editorKit) {
         super(editorKit.getModelManager().getOWLOntologyManager());
         addSection(new OWLAfikaansEquivalentClassesAxiomFrameSection(editorKit, this));
+        addSection(new OWLAfrikaansSubClassesAxiomFrameSection(editorKit, this));
+        addSection(new OWLAfrikaansDisjointClassesAxiomFrameSection(editorKit, this));
     }
 }

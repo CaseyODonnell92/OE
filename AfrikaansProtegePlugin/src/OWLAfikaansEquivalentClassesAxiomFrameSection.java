@@ -15,14 +15,14 @@ import java.util.Set;
  */
 public class OWLAfikaansEquivalentClassesAxiomFrameSection extends AbstractOWLClassAxiomFrameSection<OWLEquivalentClassesAxiom, OWLClassExpression> {
 
-    private static final String LABEL = "Ekwivalent aan";
+    private static final String LABEL = "Dieselfde as";
 
     private Set<OWLClassExpression> added = new HashSet<>();
 
     private boolean inferredEquivalentClasses = true;
 
     public OWLAfikaansEquivalentClassesAxiomFrameSection(OWLEditorKit editorKit, OWLFrame<OWLClass> frame) {
-        super(editorKit, LABEL, "Ekwivalentklas", frame);
+        super(editorKit, LABEL, "Dieselfde klas", frame);
     }
 
     @Override

@@ -5,8 +5,10 @@ import javax.annotation.Nonnull;
  */
 public enum AfrikaansManchesterOWLSyntax {
 
-    /*AND   */      EN ("en", false, false, false, false, true, "en"),
-    /*SOME  */      TEN_MINSTE_EEN("ten minste een", false, false, false, true, false, "ten misnte een"),
+    /*AND   */      EN("en", false, false, false, false, true, "en"),
+    /*SOME  */      TEN_MINSTE_EEN("sommige", false, false, false, true, false, "sommige"),
+    /*OR  */        OR("of", false, false, false, false, true, "of"),
+    /*NOT not sure which booleans to have */       //NOT("nie", false, false, false, false, true, "nie"),
     /*ONLY  */      SLEGS("slegs", false, false, false, true, false, "slegs");
 
     private final boolean frameKeyword;
