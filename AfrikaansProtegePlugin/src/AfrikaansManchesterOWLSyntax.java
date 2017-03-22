@@ -5,11 +5,16 @@ import javax.annotation.Nonnull;
  */
 public enum AfrikaansManchesterOWLSyntax {
 
-    /*AND   */      EN("en", false, false, false, false, true, "en"),
-    /*SOME  */      TEN_MINSTE_EEN("sommige", false, false, false, true, false, "sommige"),
-    /*OR  */        OR("of", false, false, false, false, true, "of"),
-    /*NOT not sure which booleans to have */       //NOT("nie", false, false, false, false, true, "nie"),
-    /*ONLY  */      SLEGS("slegs", false, false, false, true, false, "slegs");
+    /*AND       */      EN("en", false, false, false, false, true, "en"),
+    /*OR        */      OF("of", false, false, false, false, true, "of"),
+    /*SOME      */      SOMMIGE("sommige", false, false, false, true, false, "sommige"),
+    /*ONLY      */      SLEGS("slegs", false, false, false, true, false, "slegs"),
+    /*NOT       */      NIE("nie", false, false, false, false, true, "nie"),
+    /*VALUE     */      WAARDE("waarde", false, false, false, true, false, "value"),
+    /*MIN       */      TEN_MINSTE("ten minste", false, false, false, true, false, "ten minste"),
+    /*MAX       */      BY_DIE_MEESTE("by die meeste", false, false, false, true,  false, "by die meeste"),
+    /*EXACTLY   */      PRESIES("presies", false, false, false, true,  false, "presies");
+
 
     private final boolean frameKeyword;
     private final boolean sectionKeyword;
@@ -33,17 +38,6 @@ public enum AfrikaansManchesterOWLSyntax {
         classExpressionQuantiferKeyword = classExpressionQuantifierKeyword;
         this.keyword = keyword;
     }
-
-    /*
-    AfrikaansManchesterOWLSyntax(@Nonnull String rendering, boolean frameKeyword,
-                        boolean sectionKeyword, boolean axiomKeyword,
-                        boolean classExpressionQuantifierKeyword,
-                        boolean classExpressionConnectiveKeyword) {
-        this(rendering, frameKeyword, sectionKeyword, axiomKeyword,
-                classExpressionQuantifierKeyword,
-                classExpressionConnectiveKeyword, rendering + ':');
-    }
-    */
 
     public String toString() {return rendering;}
 }

@@ -66,6 +66,14 @@ public class AfrikaansManchesterOWLSyntaxObjectRenderer extends ManchesterOWLSyn
     }
 
     private void writeRestriction(
+            @Nonnull OWLQuantifiedDataRestriction restriction,
+            @Nonnull AfrikaansManchesterOWLSyntax keyword) {
+        restriction.getProperty().accept(this);
+        write(keyword);
+        restriction.getFiller().accept(this);
+    }
+
+    private void writeRestriction(
             @Nonnull OWLQuantifiedObjectRestriction restriction,
             @Nonnull AfrikaansManchesterOWLSyntax keyword) {
         restriction.getProperty().accept(this);
@@ -89,15 +97,30 @@ public class AfrikaansManchesterOWLSyntaxObjectRenderer extends ManchesterOWLSyn
         }
     }
 
-    /*
-    private void writeRestriction(
-            @Nonnull OWLQuantifiedDataRestriction restriction,
-            @Nonnull AfrikaansManchesterOWLSyntax keyword) {
-        restriction.getProperty().accept(this);
-        write(keyword);
+    private <V extends OWLObject> void writeRestriction(
+            @Nonnull OWLHasValueRestriction<V> restriction,
+            @Nonnull OWLPropertyExpression p) {
+        p.accept(this);
+        write(AfrikaansManchesterOWLSyntax.WAARDE);
         restriction.getFiller().accept(this);
     }
-    */
+
+    private <F extends OWLPropertyRange> void writeRestriction(
+            @Nonnull OWLCardinalityRestriction<F> restriction,
+            @Nonnull AfrikaansManchesterOWLSyntax keyword,
+            @Nonnull OWLPropertyExpression p) {
+        p.accept(this);
+        write(keyword);
+        write(Integer.toString(restriction.getCardinality()));
+        writeSpace();
+        if (restriction.getFiller() instanceof OWLAnonymousClassExpression) {
+            write("(");
+        }
+        restriction.getFiller().accept(this);
+        if (restriction.getFiller() instanceof OWLAnonymousClassExpression) {
+            write(")");
+        }
+    }
 
     protected void write(String prefix, @Nonnull AfrikaansManchesterOWLSyntax keyword,
                          String suffix) {
@@ -117,6 +140,87 @@ public class AfrikaansManchesterOWLSyntaxObjectRenderer extends ManchesterOWLSyn
     //The folliwing methods are overridden versions of those in super, rewritten so that they use keywords from
     //AfrikaansManchesterOWLSyntax rather than ManchesterOWLSyntax
 
+    /*** Class Expression support ***/
+    
+    //AND -> EN
+    @Override
+    public void visit(@Nonnull OWLObjectIntersectionOf ce) {
+        write(ce.getOperands(), true);
+    }
+
+    //OR -> OF
+    @Override
+    public void visit(@Nonnull OWLObjectUnionOf node) {
+        boolean first = true;
+        for (Iterator<? extends OWLClassExpression> it = node.getOperands()
+                .iterator(); it.hasNext();) {
+            OWLClassExpression op = it.next();
+            if (!first) {
+                write(" ", AfrikaansManchesterOWLSyntax.OF, " ");
+            }
+            first = false;
+            if (op.isAnonymous()) {
+                write("(");
+            }
+            op.accept(this);
+            if (op.isAnonymous()) {
+                write(")");
+            }
+        }
+    }
+
+    //NOT -> NIE
+    @Override
+    public void visit(@Nonnull OWLObjectComplementOf node) {
+        write("", AfrikaansManchesterOWLSyntax.NIE, node.isAnonymous() ? " " : "");
+        if (node.isAnonymous()) {
+            write("(");
+        }
+        node.getOperand().accept(this);
+        if (node.isAnonymous()) {
+            write(")");
+        }
+        write(AfrikaansManchesterOWLSyntax.NIE); //To implement the Afrikaans double negative
+    }
+
+    //SOME -> SOMMIGE
+    @Override
+    public void visit(OWLObjectSomeValuesFrom node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.SOMMIGE);
+    }
+
+    //ONLY -> SLEGS
+    @Override
+    public void visit(OWLObjectAllValuesFrom node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.SLEGS);
+    }
+
+    //VALUE -> WAARDE
+    @Override
+    public void visit(@Nonnull OWLObjectHasValue node) {
+        writeRestriction(node, node.getProperty());
+    }
+
+    //MIN -> TEN MINSTE
+    @Override
+    public void visit(@Nonnull OWLObjectMinCardinality node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.TEN_MINSTE, node.getProperty());
+    }
+
+    //EXACTLY -> PRESIES
+    @Override
+    public void visit(@Nonnull OWLObjectExactCardinality node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.PRESIES, node.getProperty());
+    }
+
+    //MAX -> BY DIE MEESTE
+    @Override
+    public void visit(@Nonnull OWLObjectMaxCardinality node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.BY_DIE_MEESTE, node.getProperty());
+    }
+
+    /*** Data expression support ***/
+
     //AND -> EN
     @Override
     public void visit(@Nonnull OWLDataIntersectionOf node) {
@@ -125,17 +229,46 @@ public class AfrikaansManchesterOWLSyntaxObjectRenderer extends ManchesterOWLSyn
         write(")");
     }
 
-    //SOME -> TEN MINSTE EEN
+    //OR -> OF
     @Override
-    public void visit(OWLObjectSomeValuesFrom node) {
-        writeRestriction(node, AfrikaansManchesterOWLSyntax.TEN_MINSTE_EEN);
+    public void visit(@Nonnull OWLDataUnionOf node) {
+        write("(");
+        write(node.getOperands(), AfrikaansManchesterOWLSyntax.OF, false);
+        write(")");
     }
 
-    //ONLY -> SLEGS
+    //SOME -> SOMMIGE
     @Override
-    public void visit(OWLObjectAllValuesFrom node) {
+    public void visit(OWLDataSomeValuesFrom node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.SOMMIGE);
+    }
+
+    @Override
+    public void visit(OWLDataAllValuesFrom node) {
         writeRestriction(node, AfrikaansManchesterOWLSyntax.SLEGS);
     }
+
+    @Override
+    public void visit(@Nonnull OWLDataHasValue node) {
+        writeRestriction(node, node.getProperty());
+    }
+
+    @Override
+    public void visit(@Nonnull OWLDataMinCardinality node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.TEN_MINSTE, node.getProperty());
+    }
+
+    @Override
+    public void visit(@Nonnull OWLDataExactCardinality node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.PRESIES, node.getProperty());
+    }
+
+    @Override
+    public void visit(@Nonnull OWLDataMaxCardinality node) {
+        writeRestriction(node, AfrikaansManchesterOWLSyntax.BY_DIE_MEESTE, node.getProperty());
+    }
+
+
 
     /****** END OF VISIT METHODS ******/
 }
