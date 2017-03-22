@@ -152,6 +152,7 @@
    <target name = "buildlibs" depends="checkProtegeLibsAndReport">
        <copy todir="${lib}" file="${protege.common}/log4j-over-slf4j.jar"/>
        <copy todir="${lib}" file="${protege.common}/jsr305.jar"/>
+       <copy todir="${lib}" file="${protege.common}/guava.jar"/>
     <!-->
        <unjar dest="${genlib}"
               src="${common.lib}">
