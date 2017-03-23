@@ -9,6 +9,7 @@ import org.protege.editor.owl.ui.frame.OWLFrame;
 import org.protege.editor.owl.ui.frame.OWLFrameSectionRow;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.OWLAxiomVisitorExAdapter;
+import view.frame.section.row.OWLAfrikaansGeneralClassAxiomFrameSectionRow;
 
 import javax.swing.*;
 import java.util.Comparator;

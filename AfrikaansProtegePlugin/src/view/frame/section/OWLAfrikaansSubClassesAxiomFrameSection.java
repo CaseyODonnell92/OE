@@ -6,7 +6,7 @@ import org.protege.editor.owl.ui.frame.OWLFrame;
 import org.protege.editor.owl.ui.frame.OWLFrameSectionRow;
 import org.protege.editor.owl.ui.frame.cls.AbstractOWLClassAxiomFrameSection;
 import org.semanticweb.owlapi.model.*;
-import org.semanticweb.owlapi.util.CollectionFactory;
+import view.frame.section.row.OWLAfrikaansSubClassesAxiomFrameSectionRow;
 
 import java.util.Comparator;
 import java.util.HashSet;

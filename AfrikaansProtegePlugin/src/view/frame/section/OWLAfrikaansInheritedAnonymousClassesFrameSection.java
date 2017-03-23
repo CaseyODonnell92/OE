@@ -7,6 +7,7 @@ import org.protege.editor.owl.ui.frame.OWLFrame;
 import org.protege.editor.owl.ui.frame.OWLFrameSectionRow;
 import org.protege.editor.owl.ui.frame.cls.InheritedAnonymousClassesFrameSectionRow;
 import org.semanticweb.owlapi.model.*;
+import view.frame.section.row.OWLAfrikaansInheritedAnonymousClassesFrameSectionRow;
 
 import java.util.Comparator;
 import java.util.HashSet;

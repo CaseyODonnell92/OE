@@ -6,6 +6,7 @@ import org.protege.editor.owl.ui.frame.AbstractOWLFrameSection;
 import org.protege.editor.owl.ui.frame.OWLFrame;
 import org.protege.editor.owl.ui.frame.OWLFrameSectionRow;
 import org.semanticweb.owlapi.model.*;
+import view.frame.section.row.OWLAfrikaansDisjointUnionAxiomFrameSectionRow;
 
 import java.util.Comparator;
 import java.util.Set;
