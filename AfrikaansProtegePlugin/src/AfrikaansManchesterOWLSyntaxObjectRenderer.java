@@ -1,3 +1,4 @@
+import org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntax;
 import org.semanticweb.owlapi.manchestersyntax.renderer.ManchesterOWLSyntaxObjectRenderer;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.ShortFormProvider;
@@ -6,6 +7,9 @@ import javax.annotation.Nonnull;
 import java.io.Writer;
 import java.util.Iterator;
 import java.util.Set;
+
+import static org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntax.EQUIVALENT_CLASSES;
+import static org.semanticweb.owlapi.manchestersyntax.parser.ManchesterOWLSyntax.EQUIVALENT_TO;
 
 
 /**
@@ -131,6 +135,25 @@ public class AfrikaansManchesterOWLSyntaxObjectRenderer extends ManchesterOWLSyn
 
     protected void write(@Nonnull AfrikaansManchesterOWLSyntax keyword) {
         write(" ", keyword, " ");
+    }
+
+    protected void writeSectionKeyword(@Nonnull AfrikaansManchesterOWLSyntax keyword) {
+        write(" ", keyword, ": ");
+    }
+
+    private void writeBinaryOrNaryList(
+            @Nonnull AfrikaansManchesterOWLSyntax binaryKeyword,
+            @Nonnull Set<? extends OWLObject> objects,
+            @Nonnull AfrikaansManchesterOWLSyntax naryKeyword) {
+        if (objects.size() == 2) {
+            Iterator<? extends OWLObject> it = objects.iterator();
+            it.next().accept(this);
+            write(binaryKeyword);
+            it.next().accept(this);
+        } else {
+            writeSectionKeyword(naryKeyword);
+            writeCommaSeparatedList(objects);
+        }
     }
 
     /****** END OF WRITE METHODS******/
@@ -268,6 +291,47 @@ public class AfrikaansManchesterOWLSyntaxObjectRenderer extends ManchesterOWLSyn
         writeRestriction(node, AfrikaansManchesterOWLSyntax.BY_DIE_MEESTE, node.getProperty());
     }
 
+    /*** SUPPORT FOR GENERAL CLASS AXIOMS***/
+
+    private boolean wrapSave;
+    private boolean tabSave;
+
+    private void setAxiomWriting() {
+        wrapSave = isUseWrapping();
+        tabSave = isUseTabbing();
+        setUseWrapping(false);
+        setUseTabbing(false);
+    }
+
+    private void restore() {
+        setUseTabbing(tabSave);
+        setUseWrapping(wrapSave);
+    }
+
+    @Override
+    public void visit(@Nonnull OWLSubClassOfAxiom axiom) {
+        setAxiomWriting();
+        axiom.getSubClass().accept(this);
+        write(AfrikaansManchesterOWLSyntax.SUBKLAS_VAN);
+        axiom.getSuperClass().accept(this);
+        restore();
+    }
+
+    @Override
+    public void visit(@Nonnull OWLEquivalentClassesAxiom axiom) {
+        setAxiomWriting();
+        writeBinaryOrNaryList(AfrikaansManchesterOWLSyntax.DIESELFDE_AS, axiom.getClassExpressions(),
+                AfrikaansManchesterOWLSyntax.DIESELFDE_KLASSE);
+        restore();
+    }
+
+    @Override
+    public void visit(@Nonnull OWLDisjointClassesAxiom axiom) {
+        setAxiomWriting();
+        writeBinaryOrNaryList(AfrikaansManchesterOWLSyntax.DISJUNKTE_VAN, axiom.getClassExpressions(),
+                AfrikaansManchesterOWLSyntax.DISJUNKTE_KLASSE);
+        restore();
+    }
 
 
     /****** END OF VISIT METHODS ******/

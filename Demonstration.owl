@@ -153,6 +153,22 @@
                 <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:disjointWith>
         <owl:disjointUnionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
@@ -209,6 +225,27 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+        </owl:intersectionOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+    </owl:Class>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
@@ -217,6 +254,20 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
         </owl:members>
     </rdf:Description>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+        </owl:intersectionOf>
+        <owl:disjointWith>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:disjointWith>
+    </owl:Class>
 </rdf:RDF>
 
 
