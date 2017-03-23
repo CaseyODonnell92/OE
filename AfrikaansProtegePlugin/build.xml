@@ -3,7 +3,7 @@
 <!-- 
      *** CHANGE ME *** change the project name.
   -->
-<project name = "Afrikaans Protege Plugin" default = "install" basedir = ".">
+<project name = "Afrikaans Protege Class Description Plugin" default = "install" basedir = ".">
 
    <!-- 
         To run this build file set the environment variable
@@ -29,7 +29,7 @@
         This may be the only setting that the developer needs to
         change.
      -->
-   <property name = "plugin"          value = "afrikaans-editor-plugin"/>
+   <property name = "plugin"          value = "afrikaans-class-description-plugin"/>
 
    
    <!-- 
