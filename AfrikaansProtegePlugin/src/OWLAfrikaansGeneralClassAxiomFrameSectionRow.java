@@ -22,16 +22,10 @@ public class OWLAfrikaansGeneralClassAxiomFrameSectionRow extends AbstractOWLFra
 
     @Override
     protected OWLObjectEditor<OWLClassAxiom> getObjectEditor() {
-        OWLGeneralAxiomEditor editor = new OWLGeneralAxiomEditor(getOWLEditorKit());
-        editor.setEditedObject(getAxiom());
-        return editor;
+        return null;
     }
 
-    @Override
-    public void handleEditingFinished(Set<OWLClassAxiom> editedObjects) {
-        OWLAfrikaansGeneralClassAxiomFrameSection.checkEditedAxiom(getOWLEditorKit(), editedObjects, getRootObject());
-        super.handleEditingFinished(editedObjects);
-    }
+    public boolean isEditable() {return false;}
 
     @Override
     protected OWLClassAxiom createAxiom(OWLClassAxiom editedObject) {

@@ -24,6 +24,10 @@ public class OWLAfrikaansSubClassesAxiomFrameSection extends AbstractOWLClassAxi
         super(editorKit, LABEL, "Subklas", frame);
     }
 
+    public boolean canAdd() {
+        return false;
+    }
+
     @Override
     protected void addAxiom(OWLSubClassOfAxiom ax, OWLOntology ontology) {
         addRow(new OWLAfrikaansSubClassesAxiomFrameSectionRow(getOWLEditorKit(),
@@ -54,6 +58,18 @@ public class OWLAfrikaansSubClassesAxiomFrameSection extends AbstractOWLClassAxi
     @Override
     protected OWLSubClassOfAxiom createAxiom(OWLClassExpression owlClassExpression) {
         return (OWLSubClassOfAxiom)owlClassExpression;
+    }
+
+    @Override
+    protected boolean isResettingChange(OWLOntologyChange change) {
+        if (!change.isAxiomChange()) {
+            return false;
+        }
+        OWLAxiom axiom = change.getAxiom();
+        if (axiom instanceof OWLSubClassOfAxiom) {
+            return ((OWLSubClassOfAxiom) axiom).getSubClass().equals(getRootObject());
+        }
+        return false;
     }
 
     @Override

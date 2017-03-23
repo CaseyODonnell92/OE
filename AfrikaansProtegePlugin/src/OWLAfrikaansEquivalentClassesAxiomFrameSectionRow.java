@@ -19,11 +19,6 @@ public class OWLAfrikaansEquivalentClassesAxiomFrameSectionRow extends AbstractO
     }
 
     @Override
-    protected OWLObjectEditor getObjectEditor() {
-        return null;
-    }
-
-    @Override
     protected OWLEquivalentClassesAxiom createAxiom(OWLClassExpression editedObject) {
         return getOWLDataFactory().getOWLEquivalentClassesAxiom(CollectionFactory.createSet(getRoot(), editedObject));
     }

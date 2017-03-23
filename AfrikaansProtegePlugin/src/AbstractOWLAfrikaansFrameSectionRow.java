@@ -1,4 +1,5 @@
 import org.protege.editor.owl.OWLEditorKit;
+import org.protege.editor.owl.ui.editor.OWLObjectEditor;
 import org.protege.editor.owl.ui.frame.AbstractOWLFrameSectionRow;
 import org.protege.editor.owl.ui.frame.OWLFrameSection;
 import org.protege.editor.owl.ui.renderer.OWLObjectRendererDLSyntax;
@@ -19,6 +20,19 @@ public abstract class AbstractOWLAfrikaansFrameSectionRow<R extends Object, A ex
         super(owlEditorKit, section, ontology, rootObject, axiom);
     }
 
+    public boolean isEditable() {
+        return false;
+    }
+
+    public boolean isDeleteable() {
+        return true;
+    }
+
+    @Override
+    protected OWLObjectEditor getObjectEditor() {
+        return null;
+    }
+
     protected Object getObjectRendering(OWLObject ob) {
         AfrikaansOWLObjectRendererImpl renderer = new AfrikaansOWLObjectRendererImpl(getOWLModelManager());
         return renderer.render(ob);
@@ -26,10 +40,7 @@ public abstract class AbstractOWLAfrikaansFrameSectionRow<R extends Object, A ex
 
 
     /**
-     * Gets the rendering of the value of a particular column.
-     *
-     * @return The <code>String</code> representation of the column
-     * value.
+     * Overridden to return the Afrikaans Manchester Rendering
      */
     public String getRendering() {
         StringBuilder sb = new StringBuilder();

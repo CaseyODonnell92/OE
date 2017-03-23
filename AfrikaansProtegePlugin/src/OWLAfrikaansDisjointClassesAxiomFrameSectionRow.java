@@ -25,7 +25,7 @@ public class OWLAfrikaansDisjointClassesAxiomFrameSectionRow extends AbstractOWL
 
     @Override
     protected OWLDisjointClassesAxiom createAxiom(OWLClassExpression editedObject) {
-        return getOWLDataFactory().getOWLDisjointClassesAxiom(CollectionFactory.createSet(getRoot(), editedObject));
+        return null;
     }
 
     protected List<OWLClassExpression> getObjects() {

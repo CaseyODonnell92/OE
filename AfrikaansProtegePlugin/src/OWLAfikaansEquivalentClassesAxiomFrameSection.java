@@ -25,6 +25,10 @@ public class OWLAfikaansEquivalentClassesAxiomFrameSection extends AbstractOWLCl
         super(editorKit, LABEL, "Dieselfde klas", frame);
     }
 
+    public boolean canAdd() {
+        return false;
+    }
+
     @Override
     protected void addAxiom(OWLEquivalentClassesAxiom ax, OWLOntology ontology) {
         addRow(new OWLAfrikaansEquivalentClassesAxiomFrameSectionRow(getOWLEditorKit(),
@@ -66,6 +70,13 @@ public class OWLAfikaansEquivalentClassesAxiomFrameSection extends AbstractOWLCl
     @Override
     protected void clear() {
         added.clear();
+    }
+
+    @Override
+    protected boolean isResettingChange(OWLOntologyChange change) {
+        return change.isAxiomChange() &&
+                change.getAxiom() instanceof OWLEquivalentClassesAxiom &&
+                ((OWLEquivalentClassesAxiom) change.getAxiom()).getClassExpressions().contains(getRootObject());
     }
 
     @Override

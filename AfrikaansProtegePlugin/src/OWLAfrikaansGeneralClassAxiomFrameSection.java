@@ -22,7 +22,7 @@ public class OWLAfrikaansGeneralClassAxiomFrameSection extends AbstractOWLFrameS
         OWLClassAxiom> {
 
     public OWLAfrikaansGeneralClassAxiomFrameSection(OWLEditorKit editorKit, OWLFrame<? extends OWLClass> frame) {
-        super(editorKit, "General class axioms", "General class axiom", frame);
+        super(editorKit, "Algemene Klasaksiomas", "Algemene Klasaksiomas", frame);
     }
 
     @Override
@@ -32,36 +32,11 @@ public class OWLAfrikaansGeneralClassAxiomFrameSection extends AbstractOWLFrameS
 
     @Override
     public OWLObjectEditor<OWLClassAxiom> getObjectEditor() {
-        return new OWLGeneralAxiomEditor(getOWLEditorKit());
+        return null;
     }
 
-    @Override
-    public void handleEditingFinished(Set<OWLClassAxiom> editedObjects) {
-        checkEditedAxiom(getOWLEditorKit(), editedObjects, getRootObject());
-        super.handleEditingFinished(editedObjects);
-    }
-
-    static void checkEditedAxiom(OWLEditorKit editorKit, Set<OWLClassAxiom> editedObjects, OWLClass root) {
-        if(editedObjects.isEmpty()) {
-            return;
-        }
-
-        OWLClassAxiom axiom = editedObjects.iterator().next();
-        if(!axiom.containsEntityInSignature(root)) {
-            String classesInSigRendering = "";
-            for(Iterator<OWLClass> it = axiom.getClassesInSignature().iterator(); it.hasNext(); ) {
-                OWLClass cls = it.next();
-                classesInSigRendering += editorKit.getModelManager().getRendering(cls);
-                if(it.hasNext()) {
-                    classesInSigRendering += ",\n";
-                }
-            }
-
-            JOptionPane.showMessageDialog(editorKit.getOWLWorkspace(),
-                    "The axiom that you edited has been added to the ontology.  However, it will not be visible " +
-                            "in the view below as it does not mention the selected class (" + editorKit.getOWLModelManager().getRendering(root) + ").\n" +
-                            "To view the axiom, select any of the classes it mentions: \n" + classesInSigRendering);
-        }
+    public boolean canAdd() {
+        return false;
     }
 
     @Override
@@ -81,11 +56,6 @@ public class OWLAfrikaansGeneralClassAxiomFrameSection extends AbstractOWLFrameS
     @Override
     protected void clear() {
 
-    }
-
-    @Override
-    public Comparator<OWLFrameSectionRow<OWLClass, OWLClassAxiom, OWLClassAxiom>> getRowComparator() {
-        return null;
     }
 
     @Override
@@ -115,5 +85,11 @@ public class OWLAfrikaansGeneralClassAxiomFrameSection extends AbstractOWLFrameS
             }
         });
     }
+
+    @Override
+    public Comparator<OWLFrameSectionRow<OWLClass, OWLClassAxiom, OWLClassAxiom>> getRowComparator() {
+        return null;
+    }
+
 }
 

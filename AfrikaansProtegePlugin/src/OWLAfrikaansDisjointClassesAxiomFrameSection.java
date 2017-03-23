@@ -24,6 +24,10 @@ public class OWLAfrikaansDisjointClassesAxiomFrameSection extends AbstractOWLCla
         super(editorKit, LABEL, "Disjunkte", frame);
     }
 
+    public boolean canAdd() {
+        return false;
+    }
+
     @Override
     protected void addAxiom(OWLDisjointClassesAxiom ax, OWLOntology ontology) {
         addRow(new OWLAfrikaansDisjointClassesAxiomFrameSectionRow(getOWLEditorKit(),
@@ -50,6 +54,13 @@ public class OWLAfrikaansDisjointClassesAxiomFrameSection extends AbstractOWLCla
             }
             return axioms;
         }
+    }
+
+    @Override
+    protected boolean isResettingChange(OWLOntologyChange change) {
+        return change.isAxiomChange() &&
+                change.getAxiom() instanceof OWLDisjointClassesAxiom &&
+                ((OWLDisjointClassesAxiom) change.getAxiom()).getClassExpressions().contains(getRootObject());
     }
 
     @Override
