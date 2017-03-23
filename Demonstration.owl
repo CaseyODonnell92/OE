@@ -29,6 +29,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#AtoCandB -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#AtoCandB"/>
+    
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtoA -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtoA"/>
@@ -107,6 +113,22 @@
                 <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
             </owl:Restriction>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#AtoCandB"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -150,7 +172,16 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CtosubA"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA"/>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith>
@@ -198,6 +229,18 @@
     <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:complementOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
         <rdfs:subClassOf>
             <owl:Class>
@@ -210,7 +253,16 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubAtoC"/>
-                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
