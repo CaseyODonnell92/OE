@@ -9,6 +9,7 @@ import org.protege.editor.owl.OWLEditorKit;
 import org.semanticweb.owlapi.model.*;
 import org.protege.editor.owl.ui.framelist.OWLFrameList;
 import org.protege.editor.owl.ui.view.cls.AbstractOWLClassViewComponent;
+import view.frame.OWLAfrikaansClassDescriptionFrame;
 
 import javax.swing.*;
 import java.awt.*;
