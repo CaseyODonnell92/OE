@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#"
+     xml:base="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#AtoB -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#AtoB">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtoA"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtoA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtoA"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtosubsubA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtosubsubA"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CtoB -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CtoB"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CtosubA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CtosubA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subAtoB -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subAtoB">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#AtoB"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubAtoC -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubAtoC"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CData"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#AtoB"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtoA"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#BtosubsubA"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">7</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CtoB"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CData"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#CtosubA"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subAtoB"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subA"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#subsubAtoC"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#A"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#B"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2017/2/untitled-ontology-8#C"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
